@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Luna Nails</title>
+<style>
+body{font-family:Arial;background:#fff5fb;margin:0}
+header{background:linear-gradient(135deg,#f7c1d9,#d79af5);padding:30px;text-align:center;color:white}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:white;padding:20px;border-radius:15px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+input,select,textarea{width:100%;padding:10px;margin:8px 0;box-sizing:border-box}
+button{width:100%;padding:12px;background:#d07bf0;color:white;border:none;border-radius:10px}
+</style>
+</head>
+<body>
+<header><h1>🌙 Luna Nails</h1><p>Reserva tu hora por WhatsApp</p></header>
+<div class='container'>
+<div class='card'>
+<h2>Horarios</h2>
+<p><b>Lunes a Jueves:</b> 16:30, 18:30, 20:30</p>
+<p><b>Viernes:</b> 13:30, 15:30, 17:30, 19:30</p>
+</div>
+
+<div class='card'>
+<h2>Reserva</h2>
+<input id='nombre' placeholder='Nombre'>
+<input id='telefono' placeholder='Teléfono'>
+<select id='servicio'>
+<option>Soft Gel</option>
+<option>Esmaltado Semipermanente</option>
+<option>Press On</option>
+</select>
+<select id='hora'>
+<option>16:30</option>
+<option>18:30</option>
+<option>20:30</option>
+<option>13:30 (Viernes)</option>
+<option>15:30 (Viernes)</option>
+<option>17:30 (Viernes)</option>
+<option>19:30 (Viernes)</option>
+</select>
+<input id='fecha' type='date'>
+<textarea id='detalle' placeholder='Diseño o comentario'></textarea>
+<button onclick='enviar()'>Enviar Reserva</button>
+</div>
+</div>
+
+<script>
+function enviar(){
+let mensaje = "Hola Luna Nails 🌙\n"+
+"Nombre: "+document.getElementById('nombre').value+"\n"+
+"Teléfono: "+document.getElementById('telefono').value+"\n"+
+"Servicio: "+document.getElementById('servicio').value+"\n"+
+"Fecha: "+document.getElementById('fecha').value+"\n"+
+"Hora: "+document.getElementById('hora').value+"\n"+
+"Detalle: "+document.getElementById('detalle').value;
+
+window.open("https://wa.me/56942421823?text="+encodeURIComponent(mensaje), "_blank");
+}
+</script>
+</body>
+</html>
